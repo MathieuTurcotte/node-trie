@@ -1,6 +1,7 @@
-# Node.js trie implementation based on a Minimal Acyclic Finite-State Automata
+# Trie implementation based on a Minimal Acyclic Finite-State Automata for Node.js
 
-Node.js trie implementation based on a Minimal Acyclic Finite-State Automata.
+Trie implementation based on a Minimal Acyclic Finite-State Automata for
+Node.js.
 
 Implementation based on "Incremental Construction of Minimal Acyclic
 Finite-State Automata" by Jan Daciuk, Stoyan Mihov, Bruce W. Watson and
@@ -12,7 +13,32 @@ Richard E. Watson.
 npm install dtrie
 ```
 
+## Usage
+
+Basic dictionary usage:
+
+```js
+var dtrie = require('dtrie');
+
+var trie = dtrie.createFromWords(['ai', 'aient', 'aime', 'aimer']);
+
+assert.ok(trie.contains('ai'));
+assert.ok(!trie.contains('aimerait'));
+```
+
 ## API
+
+### dtrie.loadFromFile(filepath)
+
+- filepath: path to dictionary (one word per line, unix eol)
+
+Construct a dictionary from a file.
+
+### dtrie.createFromWords(words)
+
+- words: a list of lowercase words
+
+Construct a dictionary from a list of words.
 
 ### Class Node
 
@@ -42,11 +68,11 @@ Return true if this node has a child for the given transition.
 
 Return the node child.
 
-#### node.pathExists(path)
+#### node.pathExists(suffix)
 
-- path: a word to follow
+- suffix: a suffix to check
 
-Check if a path exists from this node to a terminal node.
+Check if this node recognize the given suffix.
 
 #### node.isTerminal()
 
@@ -65,7 +91,8 @@ Construct a new automata.
 - words: an alphabetically sorted list of lowercase words
 
 Populate the automata from an alphabetically sorted list of lowercase
-words. This method should only be called once per automata.
+words. This method should only be called once per automata. Words must
+contain letters within range [a-z].
 
 #### automata.contains(word)
 
