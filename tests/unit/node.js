@@ -117,5 +117,49 @@ module.exports['Node'] = {
         test.ok(!this.node.pathExists(appendRandomLetter(path)));
         test.ok(!this.node.pathExists(removeLastLetter(path)));
         test.done();
+    },
+
+    "getClass should return equal classes for empty nodes": function(test) {
+        var node1 = new Node(),
+            node2 = new Node();
+
+        test.ok(node1.getClass() == node2.getClass());
+        test.done();
+    },
+
+    "getClass should return equal classes for nodes with same children": function(test) {
+        var node1 = new Node();
+        node1.addChild('a', 1);
+        node1.addChild('b', 2);
+
+        var node2 = new Node();
+        node2.addChild('a', 1);
+        node2.addChild('b', 2);
+
+        test.ok(node1.getClass() == node2.getClass());
+        test.done();
+    },
+
+    "getClass should return different classes for nodes with different children": function(test) {
+        var node1 = new Node();
+        node1.addChild('a', 1);
+        node1.addChild('b', 2);
+
+        var node2 = new Node();
+        node2.addChild('a', 1);
+        node2.addChild('b', 3); // Mismatch.
+
+        test.ok(node1.getClass() != node2.getClass());
+        test.done();
+    },
+
+    "getClass should return different classes for terminal/non-terminal nodes": function(test) {
+        var node1 = new Node(),
+            node2 = new Node();
+
+        node1.markTerminal();
+
+        test.ok(node1.getClass() != node2.getClass());
+        test.done();
     }
 };
