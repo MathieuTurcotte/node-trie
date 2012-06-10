@@ -3,7 +3,7 @@
     "description": "Trie implementation based on a Minimal Acyclic Finite-State Automaton.",
     "version": "1.0.0",
     "author": "Mathieu Turcotte <turcotte.mat@gmail.com>",
-    "keywords": ["trie", "fsa", "automata", "node"],
+    "keywords": ["trie", "prefix tree", "automaton", "automata", "fsa"],
     "repository": {
         "type": "git",
         "url": "https://github.com/MathieuTurcotte/node-trie.git"
