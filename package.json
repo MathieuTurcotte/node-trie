@@ -1,7 +1,7 @@
 {
     "name": "dtrie",
     "description": "Trie implementation based on a Minimal Acyclic Finite-State Automaton.",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "author": "Mathieu Turcotte <turcotte.mat@gmail.com>",
     "keywords": ["trie", "prefix tree", "automaton", "automata", "fsa"],
     "repository": {
