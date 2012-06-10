@@ -10,7 +10,7 @@ var assert = require('assert'),
     util = require('util'),
     fs = require('fs');
 
-var Automata = require('../../lib/automata');
+var Automaton = require('../../lib/automaton');
 
 var WORDS_FILE = path.join(__dirname, 'data/words.txt'),
     MISSING_WORDS = path.join(__dirname, 'data/missing.txt');
@@ -42,7 +42,7 @@ function main() {
     var words = loadWordsFromFile(WORDS_FILE),
         missingWords = loadWordsFromFile(MISSING_WORDS);
 
-    var dict = new Automata();
+    var dict = new Automaton();
 
     util.log(util.format('Populate: %dms', timeExecution(function() {
         dict.addAll(words);

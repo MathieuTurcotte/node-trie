@@ -3,17 +3,17 @@
  * Licensed under the MIT license.
  */
 
-var Automata = require('../../lib/automata');
+var Automaton = require('../../lib/automaton');
 
 var WORDS = ['aient', 'ais', 'ait', 'zoo'],
     MISSING_WORDS = ['ai', 'aie', 'aise', 'zo'];
 
 var EXPECTED_NUM_NODES = 8;
 
-module.exports['Automata'] = {
+module.exports['Automaton'] = {
 
     setUp: function(callback) {
-        this.automaton = new Automata();
+        this.automaton = new Automaton();
         this.automaton.addAll(WORDS);
         callback();
     },
@@ -55,7 +55,7 @@ module.exports['Automata'] = {
         test.done();
     },
 
-    "getNumNodes should return the number of nodes in the automata": function(test) {
+    "getNumNodes should return the number of nodes in the automaton": function(test) {
         var numNodes = this.automaton.getNumNodes();
         test.equal(numNodes, EXPECTED_NUM_NODES);
         test.done();

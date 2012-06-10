@@ -1,7 +1,4 @@
-# Trie implementation based on a Minimal Acyclic Finite-State Automata for Node.js
-
-Trie implementation based on a Minimal Acyclic Finite-State Automata for
-Node.js.
+# Trie implementation based on a Minimal Automaton for Node.js
 
 Implementation based on "Incremental Construction of Minimal Acyclic
 Finite-State Automata" by Jan Daciuk, Stoyan Mihov, Bruce W. Watson and
@@ -78,31 +75,31 @@ Check if this node recognize the given suffix.
 
 Return true if the current node is a terminal node.
 
-### Class Automata
+### Class Automaton
 
-This class is a subclass of Node.
+This class is a subclass of Node and represent an automaton.
 
-#### new Automata()
+#### new Automaton()
 
-Construct a new automata.
+Construct a new automaton.
 
-#### automata.addAll(words)
+#### automaton.addAll(words)
 
 - words: an alphabetically sorted list of lowercase words
 
-Populate the automata from an alphabetically sorted list of lowercase
-words. This method should only be called once per automata. Words must
+Populate the automaton from an alphabetically sorted list of lowercase
+words. This method should only be called once per automaton. Words must
 contain letters within range [a-z].
 
-#### automata.contains(word)
+#### automaton.contains(word)
 
 - word: the word to lookup
 
-Return true if the automata recognize the given word.
+Return true if the automaton recognize the given word.
 
-#### automata.getNumNodes()
+#### automaton.getNumNodes()
 
-Return the number of nodes in the automata.
+Return the number of nodes in the automaton.
 
 ## License
 

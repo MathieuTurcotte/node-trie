@@ -3,25 +3,25 @@
  * Licensed under the MIT license.
  */
 
-var Automata = require('./lib/automata'),
+var Automaton = require('./lib/automaton'),
     Node = require('./lib/node');
 
 /**
  * @param words A list of alphabetically sorted lowercase words.
- * @return The populated automata.
+ * @return The populated automaton.
  */
 module.exports.createFromWords = function(words) {
-    var dict = new Automata();
+    var dict = new Automaton();
     dict.addAll(words);
     return dict;
 };
 
 /**
  * @param filepath Path to an alphabetically sorted words list.
- * @return The populated automata.
+ * @return The populated automaton.
  */
 module.exports.loadFromFile = function(filepath) {
-    var dict = new Automata(),
+    var dict = new Automaton(),
         data = fs.readFileSync(filepath, 'utf8');
     dict.addAll(data.toLowerCase().split('\n'));
     return dict;
@@ -29,4 +29,4 @@ module.exports.loadFromFile = function(filepath) {
 
 module.exports.Node = Node;
 
-module.exports.Automata = Automata;
+module.exports.Automaton = Automaton;

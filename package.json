@@ -1,6 +1,6 @@
 {
     "name": "dtrie",
-    "description": "Trie implementation based on a Minimal Acyclic Finite-State Automata.",
+    "description": "Trie implementation based on a Minimal Acyclic Finite-State Automaton.",
     "version": "1.0.0",
     "author": "Mathieu Turcotte <turcotte.mat@gmail.com>",
     "keywords": ["trie", "fsa", "automata", "node"],
