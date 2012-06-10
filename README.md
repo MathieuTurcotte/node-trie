@@ -1,4 +1,4 @@
-# Trie implementation based on a Minimal Automaton for Node.js
+# Trie implementation based on a minimal automaton for Node.js
 
 Implementation based on "Incremental Construction of Minimal Acyclic
 Finite-State Automata" by Jan Daciuk, Stoyan Mihov, Bruce W. Watson and
