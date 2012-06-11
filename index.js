@@ -3,6 +3,8 @@
  * Licensed under the MIT license.
  */
 
+var fs = require('fs');
+
 var Automaton = require('./lib/automaton'),
     Node = require('./lib/node');
 
@@ -12,7 +14,7 @@ var Automaton = require('./lib/automaton'),
  */
 module.exports.createFromWords = function(words) {
     var dict = new Automaton();
-    dict.addAll(words);
+    dict.populate(words);
     return dict;
 };
 
@@ -23,7 +25,7 @@ module.exports.createFromWords = function(words) {
 module.exports.loadFromFile = function(filepath) {
     var dict = new Automaton(),
         data = fs.readFileSync(filepath, 'utf8');
-    dict.addAll(data.toLowerCase().split('\n'));
+    dict.populate(data.toLowerCase().split('\n'));
     return dict;
 };
 

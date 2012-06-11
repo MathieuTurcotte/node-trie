@@ -27,7 +27,7 @@ function collectTerminalIds(automata) {
             terminals[node.id] = true;
         }
         node.letters.forEach(function(letter) {
-            nodes.push(node.child(letter));
+            nodes.push(node.getChild(letter));
         });
     }
 
@@ -53,7 +53,7 @@ function getGraphvizSource(automata, stream) {
 
     while (node = nodes.pop()) {
         node.letters.forEach(function(letter) {
-            var child = node.child(letter);
+            var child = node.getChild(letter);
             stream.write('    ' + node.id + ' -> ' + child.id + ' [label="' + letter + '"];\n');
             nodes.push(child);
         });

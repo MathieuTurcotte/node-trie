@@ -59,13 +59,13 @@ Node's transitions.
 
 Return true if this node has a child for the given transition.
 
-#### node.child(letter)
+#### node.getChild(letter)
 
 - letter: transition label
 
 Return the node child.
 
-#### node.pathExists(suffix)
+#### node.accepts(suffix)
 
 - suffix: a suffix to check
 
@@ -83,7 +83,7 @@ This class is a subclass of Node and represent an automaton.
 
 Construct a new automaton.
 
-#### automaton.addAll(words)
+#### automaton.populate(words)
 
 - words: an alphabetically sorted list of lowercase words
 
@@ -97,7 +97,7 @@ contain letters within range [a-z].
 
 Return true if the automaton recognize the given word.
 
-#### automaton.getNumNodes()
+#### automaton.getSize()
 
 Return the number of nodes in the automaton.
 

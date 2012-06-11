@@ -27,9 +27,18 @@ module.exports['Node'] = {
         callback();
     },
 
+    "letters attribute should contain outgoing transition labels": function(test) {
+        this.node.addChild('a');
+        this.node.addChild('z');
+        test.equal(this.node.letters.length, 2);
+        test.ok(this.node.letters.indexOf('a') != -1);
+        test.ok(this.node.letters.indexOf('z') != -1);
+        test.done();
+    },
+
     "addChild should create and insert a new node for a given letter": function(test) {
         this.node.addChild('a');
-        test.ok(this.node.child('a'));
+        test.ok(this.node.getChild('a'));
         test.done();
     },
 
@@ -61,26 +70,26 @@ module.exports['Node'] = {
         test.done();
     },
 
-    "child should return the child node for the given transition": function(test) {
+    "getChild should return the child node for the given transition": function(test) {
         var child = this.node.addChild('a');
-        test.equal(this.node.child('a'), child);
+        test.equal(this.node.getChild('a'), child);
         test.done();
     },
 
-    "child should return the undefined when child exists for the given transition": function(test) {
-        test.ok(!this.node.child('a'));
+    "getChild should return the undefined when child exists for the given transition": function(test) {
+        test.ok(!this.node.getChild('a'));
         test.done();
     },
 
-    "lastChild should return the last child based on the alphabetical order": function(test) {
+    "getLastChild should return the last inserted child": function(test) {
         var first = this.node.addChild('d'),
             second = this.node.addChild('e'),
             last = this.node.addChild('f');
-        test.equal(this.node.lastChild(), last);
+        test.equal(this.node.getLastChild(), last);
         test.done();
     },
 
-    "setLastChild should replace the last child inserted": function(test) {
+    "setLastChild should replace the last inserted child": function(test) {
         var first = this.node.addChild('a'),
             second = this.node.addChild('c'),
             last = this.node.addChild('e');
@@ -88,7 +97,17 @@ module.exports['Node'] = {
         var replacement = new Node();
         this.node.setLastChild(replacement);
 
-        test.equal(this.node.lastChild(), replacement);
+        test.equal(this.node.getLastChild(), replacement);
+        test.done();
+    },
+
+    "isTerminal should return false for new node": function(test) {
+        test.ok(!this.node.isTerminal());
+        test.done();
+    },
+
+    "isRegistered should return false for new node": function(test) {
+        test.ok(!this.node.isRegistered());
         test.done();
     },
 
@@ -104,18 +123,18 @@ module.exports['Node'] = {
         test.done();
     },
 
-    "pathExists should return true if a path exists from a given node": function(test) {
+    "accepts should return true if a path exists from a given node": function(test) {
         var path = 'mzefds';
         makePath(this.node, path);
-        test.ok(this.node.pathExists(path));
+        test.ok(this.node.accepts(path));
         test.done();
     },
 
-    "pathExists should return false if a path does not exist from a given node": function(test) {
+    "accepts should return false if a path does not exist from a given node": function(test) {
         var path = 'mzefds';
         makePath(this.node, path);
-        test.ok(!this.node.pathExists(appendRandomLetter(path)));
-        test.ok(!this.node.pathExists(removeLastLetter(path)));
+        test.ok(!this.node.accepts(appendRandomLetter(path)));
+        test.ok(!this.node.accepts(removeLastLetter(path)));
         test.done();
     },
 

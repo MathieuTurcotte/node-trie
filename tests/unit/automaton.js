@@ -14,8 +14,16 @@ module.exports['Automaton'] = {
 
     setUp: function(callback) {
         this.automaton = new Automaton();
-        this.automaton.addAll(WORDS);
+        this.automaton.populate(WORDS);
         callback();
+    },
+
+    "populating from an empty list should throw an error": function(test) {
+        var automaton = new Automaton();
+        test.throws(function() {
+            automaton.populate([]);
+        });
+        test.done();
     },
 
     "contains should return true when words exists": function(test) {
@@ -37,26 +45,8 @@ module.exports['Automaton'] = {
         test.done();
     },
 
-    "child should return nothing if no child match the given letter": function(test) {
-        test.ok(!this.automaton.child('b'));
-        test.done();
-    },
-
-    "child should return the descendent node": function(test) {
-        test.ok(this.automaton.child('z'));
-        test.done();
-    },
-
-    "the letters attribute should return all node's letters": function(test) {
-        var letters = this.automaton.letters;
-        test.equal(letters.length, 2);
-        test.ok(letters.indexOf('a') != -1);
-        test.ok(letters.indexOf('z') != -1);
-        test.done();
-    },
-
-    "getNumNodes should return the number of nodes in the automaton": function(test) {
-        var numNodes = this.automaton.getNumNodes();
+    "getSize should return the number of nodes in the automaton": function(test) {
+        var numNodes = this.automaton.getSize();
         test.equal(numNodes, EXPECTED_NUM_NODES);
         test.done();
     }
