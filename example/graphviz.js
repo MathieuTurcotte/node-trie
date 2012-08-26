@@ -13,7 +13,7 @@ var WORDS = [
     'aime',
     'aimer',
     'ais',
-    'ait',
+    'ait'
 ];
 
 function collectTerminalIds(automata) {
@@ -36,7 +36,7 @@ function collectTerminalIds(automata) {
     }
 
     return ids;
-};
+}
 
 function getGraphvizSource(automata, stream) {
     var nodes = [automata], node;
@@ -60,7 +60,7 @@ function getGraphvizSource(automata, stream) {
     }
 
     stream.write('}\n');
-};
+}
 
 var trie = dtrie.createFromWords(WORDS);
 getGraphvizSource(trie, process.stdout);

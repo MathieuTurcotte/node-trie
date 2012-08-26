@@ -57,6 +57,6 @@ function main() {
     util.log(util.format('Lookup missing : %dms', timeExecution(function() {
         lookupMissingWords(dict, missingWords);
     })));
-};
+}
 
 main();
