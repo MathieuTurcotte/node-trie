@@ -45,10 +45,10 @@ function main() {
     var dict = new Automaton();
 
     util.log(util.format('Populate: %dms', timeExecution(function() {
-        dict.addAll(words);
+        dict.populate(words);
     })));
 
-    util.log(util.format('Nodes   : %d', dict.getNumNodes()));
+    util.log(util.format('Nodes   : %d', dict.getSize()));
 
     util.log(util.format('Lookup existing: %dms', timeExecution(function() {
         lookupExistingWords(dict, words);
