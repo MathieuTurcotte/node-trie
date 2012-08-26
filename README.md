@@ -1,8 +1,8 @@
 # Trie implementation based on a minimal automaton for Node.js [![Build Status](https://secure.travis-ci.org/MathieuTurcotte/node-trie.png)](http://travis-ci.org/MathieuTurcotte/node-trie)
 
-Implementation based on "Incremental Construction of Minimal Acyclic
-Finite-State Automata" by Jan Daciuk, Stoyan Mihov, Bruce W. Watson and
-Richard E. Watson.
+Implementation based on "[Incremental Construction of Minimal Acyclic
+Finite-State Automata](http://acl.ldc.upenn.edu/J/J00/J00-1002.pdf)" by Jan
+Daciuk, Stoyan Mihov, Bruce W. Watson and Richard E. Watson.
 
 ## Installation
 
