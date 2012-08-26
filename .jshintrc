@@ -69,7 +69,7 @@
     // If == null comparisons should be tolerated.
     "eqnull": false,
     // If eval should be allowed.
-    "evil": false,
+    "evil": true,
     // If ExpressionStatement should be allowed as Programs.
     "expr": false,
     // If `for in` loops must filter with `hasOwnPrototype`.
@@ -80,7 +80,7 @@
     // If use before define should not be tolerated.
     "latedef": false,
     // If functions should be allowed to be defined within loops.
-    "loopfunc": false,
+    "loopfunc": true,
     // If arguments.caller and arguments.callee should be disallowed.
     "noarg": false,
     // If the . should not be allowed in regexp literals.
@@ -137,7 +137,7 @@
     // If increment and decrement (`++` and `--`) should not be allowed.
     "plusplus": false,
     // If all forms of subscript notation are tolerated.
-    "sub": false,
+    "sub": true,
     // If trailing whitespace rules apply.
     "trailing": true,
     // If strict whitespace rules apply.
