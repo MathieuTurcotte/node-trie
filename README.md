@@ -10,6 +10,20 @@ Daciuk, Stoyan Mihov, Bruce W. Watson and Richard E. Watson.
 npm install dtrie
 ```
 
+## Tests
+
+To run the unit tests:
+
+```
+npm test
+```
+
+To run the performance/stress tests:
+
+```
+npm run-script stress
+```
+
 ## Usage
 
 Basic dictionary usage:
