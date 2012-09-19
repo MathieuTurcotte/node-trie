@@ -1,7 +1,7 @@
 {
     "name": "dtrie",
     "description": "Trie implementation based on a minimal automaton.",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "author": "Mathieu Turcotte <turcotte.mat@gmail.com>",
     "keywords": ["trie", "prefix tree", "automaton", "automata", "fsa"],
     "repository": {
