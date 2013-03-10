@@ -10,7 +10,7 @@
     },
     "devDependencies": {
         "nodeunit": "0.7",
-        "jshint": "0.9"
+        "jshint": "0.9.0"
     },
     "scripts": {
         "prepublish": "node_modules/jshint/bin/hint lib/ tests/ example/ index.js && node_modules/nodeunit/bin/nodeunit tests/unit",
