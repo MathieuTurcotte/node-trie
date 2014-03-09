@@ -13,8 +13,8 @@
         "jshint": "2.4"
     },
     "scripts": {
-        "prepublish": "node_modules/jshint/bin/hint lib/ tests/ example/ index.js && node_modules/nodeunit/bin/nodeunit tests/unit",
-        "pretest": "node_modules/jshint/bin/hint lib/ tests/ example/ index.js",
+        "prepublish": "node_modules/jshint/bin/jshint lib/ tests/ example/ index.js && node_modules/nodeunit/bin/nodeunit tests/unit",
+        "pretest": "node_modules/jshint/bin/jshint lib/ tests/ example/ index.js",
         "test": "node_modules/nodeunit/bin/nodeunit tests/unit",
         "stress": "node tests/stress/test.js"
     },
