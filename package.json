@@ -9,7 +9,7 @@
         "url": "https://github.com/MathieuTurcotte/node-trie.git"
     },
     "devDependencies": {
-        "nodeunit": "0.7",
+        "nodeunit": "0.8",
         "jshint": "0.9.0"
     },
     "scripts": {
